@@ -1,7 +1,7 @@
 enum OrderStatus {
   confirmed(label: 'Confirmado'),
   cooking(label: 'Cocinando'),
-  readyToDeliver(label: 'Listo para entrega'),
+  readyToDeliver(label: 'Listo para entregar'),
   delivered(label: 'Entregado');
 
   const OrderStatus({required this.label});

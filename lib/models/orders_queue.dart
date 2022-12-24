@@ -2,11 +2,17 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 
 class OrdersQueueModel extends Equatable {
-  final String productId;
-  final String tableId;
-  final String tableName;
-  final String productName;
-  final String estado;
+  factory OrdersQueueModel.fromJson(String source) => OrdersQueueModel.fromMap(json.decode(source));
+
+  factory OrdersQueueModel.fromMap(Map<String, dynamic> map) {
+    return OrdersQueueModel(
+      productId: map['productId'] ?? '',
+      tableId: map['tableId'] ?? '',
+      tableName: map['tableName'] ?? '',
+      productName: map['productName'] ?? '',
+      estado: map['estado'] ?? '',
+    );
+  }
 
   const OrdersQueueModel({
     required this.productId,
@@ -15,6 +21,11 @@ class OrdersQueueModel extends Equatable {
     required this.productName,
     required this.estado,
   });
+  final String productId;
+  final String tableId;
+  final String tableName;
+  final String productName;
+  final String estado;
 
   OrdersQueueModel copyWith({
     String? productId,
@@ -42,19 +53,7 @@ class OrdersQueueModel extends Equatable {
     };
   }
 
-  factory OrdersQueueModel.fromMap(Map<String, dynamic> map) {
-    return OrdersQueueModel(
-      productId: map['productId'] ?? '',
-      tableId: map['tableId'] ?? '',
-      tableName: map['tableName'] ?? '',
-      productName: map['productName'] ?? '',
-      estado: map['estado'] ?? '',
-    );
-  }
-
   String toJson() => json.encode(toMap());
-
-  factory OrdersQueueModel.fromJson(String source) => OrdersQueueModel.fromMap(json.decode(source));
 
   @override
   String toString() {

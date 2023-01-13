@@ -2,13 +2,15 @@ name: oyt_front_orders_queue
 description: A new Flutter package project.
 version: 0.0.1
 homepage: https://github.com/nestorsgarzonc
+publish_to: "none"
 
 environment:
   sdk: ">=2.18.6 <3.0.0"
   flutter: ">=3.3.10"
 
 dependencies:
-  equatable: ^2.0.5
+  oyt_front_core:
+    path: ../oyt_front_core
   flutter:
     sdk: flutter
 
